@@ -6,9 +6,9 @@ use Livewire\Component;
 
 class Header extends Component{
 
-    protected $queryString = ['search' => ['except' => '']];
+    protected $queryString = ['search' => ['except' => ''],'categoria_id' => ['except' => '']];
 
-    public $search='';
+    public $search='',$categoria_id;
 
     public function render(){
 
@@ -18,6 +18,6 @@ class Header extends Component{
     }
 
     public function actualizar(){
-        $this->emit('actualizar',$this->search);
+        $this->emit('actualizar',$this->search,$this->categoria_id);
     }
 }
